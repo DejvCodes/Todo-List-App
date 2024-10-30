@@ -1,0 +1,148 @@
+/* ---------- Import Google Fonts ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=wrap");
+:root {
+  --purple-color: #4100FF;
+  --blue-color: #00C6FF;
+  --white-color: #FFF;
+  --black-color: #000;
+  --grey-color: #555;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(0deg, var(--purple-color) 20%, var(--blue-color) 74%);
+  padding: 20px;
+}
+.to-do-list {
+  width: 100%;
+  max-width: 540px;
+  background: var(--white-color);
+  border-radius: 10px;
+  padding: 40px 30px 40px;
+  margin: 8% auto 20px;
+}
+.to-do-list h2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black-color);
+  background: rgb(128, 128, 128, 0.3);
+  /* background: linear-gradient(130deg, var(--blue-color), var(--purple-color)); */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+.to-do-list h2 img {
+  width: 35px;
+  margin-left: 10px;
+}
+.list-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #EDEEF0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+input#input-box {
+  width: 100%;
+  font-size: 14px;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+button#add-btn {
+  font-size: 16px;
+  color: var(--white-color);
+  background: linear-gradient(130deg, var(--blue-color), var(--purple-color));
+  border-radius: 40px;
+  transition: all 0.2s linear;
+  padding: 15px 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+ul#list-container li {
+  position: relative;
+  font-size: 16px;
+  list-style: none;
+  padding: 12px 8px 10px 45px;
+}
+ul#list-container li::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-image: url('../img/unchecked.webp');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+ul#list-container li.checked {
+  color: var(--grey-color);
+  text-decoration: line-through;
+}
+ul#list-container li.checked::before {
+  background-image: url(../img/checked.webp);
+}
+ul#list-container li span {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  color: var(--black-color);
+  line-height: 43px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+ul#list-container li span:hover {
+  background: #EDEEF0;
+}
+
+/* ---------- Responsive ---------- */
+@media only screen and (max-width: 550px) {
+  .container {
+    padding: 15px;
+  }
+  .to-do-list {
+    margin: 30% auto 20px;
+    padding: 40px 20px;
+  }
+  .list-input {
+    height: 40px;
+  }
+  button#add-btn {
+    padding: 10.25px 35px;
+  }
+  ul#list-container li {
+    font-size: 16px;
+    padding: 12px 8px 10px 35px;
+  }
+  ul#list-container li::before {
+    top: 14px;
+    width: 20px;
+    height: 20px;
+  }
+  ul#list-container li span {
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+}
