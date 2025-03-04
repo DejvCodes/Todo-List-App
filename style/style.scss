@@ -178,3 +178,25 @@ body {
     }
   }
 }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  background: $bg-color;
+
+  p {
+    color: $text-color;
+    font-size: $footer-font-site;
+    font-family: $josefin-sans;
+
+    a {
+      color: $white-color;
+      transition: all 0.2s linear;
+
+      &:hover {
+        color: $text-color;
+      }
+    }
+  }
+}

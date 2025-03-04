@@ -195,4 +195,23 @@ body {
 }
 .container .todo-info button.clear-completed:hover {
   color: #E9E9E9;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  background: #101016;
+}
+footer p {
+  color: #81828F;
+  font-size: 14px;
+  font-family: "Josefin Sans", serif;
+}
+footer p a {
+  color: #E9E9E9;
+  transition: all 0.2s linear;
+}
+footer p a:hover {
+  color: #81828F;
 }/*# sourceMappingURL=style.css.map */
