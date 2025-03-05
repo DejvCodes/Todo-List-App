@@ -2,6 +2,7 @@
 const inputBox = document.querySelector('.input-form input') as HTMLInputElement
 const addBtn = document.querySelector('.input-form button') as HTMLButtonElement
 const todoItems = document.querySelector('.todo-items') as HTMLElement
+const cross = document.querySelector('.cross') as HTMLElement
 
 // Default values
 let keyword: string = ""
@@ -55,3 +56,7 @@ if (addBtn) {
 } else {
     console.error("Add button not found!")
 }
+
+cross.addEventListener('click', () => {
+    alert("test na mobilu, klik")
+})

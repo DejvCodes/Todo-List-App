@@ -3,6 +3,7 @@
 const inputBox = document.querySelector('.input-form input');
 const addBtn = document.querySelector('.input-form button');
 const todoItems = document.querySelector('.todo-items');
+const cross = document.querySelector('.cross');
 // Default values
 let keyword = "";
 // Function addTask()
@@ -48,3 +49,6 @@ if (addBtn) {
 else {
     console.error("Add button not found!");
 }
+cross.addEventListener('click', () => {
+    alert("test na mobilu, klik");
+});
