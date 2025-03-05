@@ -202,3 +202,22 @@ footer {
     }
   }
 }
+
+
+
+
+@media screen and (max-width: 500px) {
+  .container {
+  li.one-item {
+    position: relative;
+
+    &::before {
+      top: 19px;
+    }
+
+    span.cross {
+      top: 9px;
+    }
+  }
+}
+}

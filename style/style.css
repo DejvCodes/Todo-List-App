@@ -220,4 +220,16 @@ footer p a {
 }
 footer p a:hover {
   color: #81828F;
+}
+
+@media screen and (max-width: 500px) {
+  .container li.one-item {
+    position: relative;
+  }
+  .container li.one-item::before {
+    top: 19px;
+  }
+  .container li.one-item span.cross {
+    top: 9px;
+  }
 }/*# sourceMappingURL=style.css.map */
