@@ -8,7 +8,7 @@ const addTask = () => {
     if (keyword === "") {
         alert("Please enter a new todo...");
     }
-    else { 
+    else {
         const newTask = {
             id: new Date().getTime(),
             text: keyword,
