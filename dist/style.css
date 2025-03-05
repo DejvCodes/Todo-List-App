@@ -33,7 +33,7 @@ body {
   left: 0;
   width: 100%;
   height: 230px;
-  background: url("/img/background.jpg") no-repeat bottom/cover;
+  background: url("../img/background.jpg") no-repeat bottom/cover;
   box-shadow: 0 0 10px 5px #1B2DB4;
   z-index: -1;
 }
