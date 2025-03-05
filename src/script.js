@@ -3,7 +3,6 @@
 const inputBox = document.querySelector('.input-form input');
 const addBtn = document.querySelector('.input-form button');
 const todoItems = document.querySelector('.todo-items');
-const cross = document.querySelector('.cross');
 // Default values
 let keyword = "";
 // Function addTask()
@@ -37,6 +36,7 @@ const createNewTask = (task) => {
     const elementSpan = document.createElement('span');
     elementSpan.innerHTML = '\u00d7';
     elementSpan.classList.add("cross");
+    elementSpan.addEventListener('click', () => alert("Kliknuto"));
     elementLi.appendChild(elementSpan);
 };
 // Calling the addTask() function after the addBtn button is pressed
@@ -49,6 +49,3 @@ if (addBtn) {
 else {
     console.error("Add button not found!");
 }
-cross.addEventListener('click', () => {
-    alert("test na mobilu, klik");
-});

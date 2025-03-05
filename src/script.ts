@@ -2,7 +2,6 @@
 const inputBox = document.querySelector('.input-form input') as HTMLInputElement
 const addBtn = document.querySelector('.input-form button') as HTMLButtonElement
 const todoItems = document.querySelector('.todo-items') as HTMLElement
-const cross = document.querySelector('.cross') as HTMLElement
 
 // Default values
 let keyword: string = ""
@@ -44,6 +43,7 @@ const createNewTask = (task: Task): void => {
     const elementSpan = document.createElement('span')
     elementSpan.innerHTML = '\u00d7'
     elementSpan.classList.add("cross")
+    elementSpan.addEventListener('click', () => alert("Kliknuto"))
     elementLi.appendChild(elementSpan)
 }
 
@@ -56,7 +56,3 @@ if (addBtn) {
 } else {
     console.error("Add button not found!")
 }
-
-cross.addEventListener('click', () => {
-    alert("test na mobilu, klik")
-})
