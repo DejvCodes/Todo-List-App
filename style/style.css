@@ -223,6 +223,12 @@ footer p a:hover {
 }
 
 @media screen and (max-width: 500px) {
+  .container li.one-item {
+    position: relative;
+  }
+  .container li.one-item::before {
+    top: 18px;
+  }
   .container li.one-item span.cross {
     top: 9px;
   }
