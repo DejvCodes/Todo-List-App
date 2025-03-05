@@ -46,7 +46,7 @@ const createNewTask = (task: Task): void => {
     elementLi.appendChild(elementSpan)
 }
 
-// Calling the addTask() function after the addBtn button is pressed
+// Calling the addTask() function after the addBtn button is  pressed
 if (addBtn) {
     addBtn.addEventListener('click', (e) => {
         e.preventDefault()
