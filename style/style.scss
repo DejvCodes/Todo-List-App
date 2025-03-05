@@ -125,7 +125,7 @@ body {
                   linear-gradient($neon-color-blue, $neon-color-pink);
     }
 
-    p {
+    p.text {
       color: $white-color;
       font-family: $josefin-sans;
       font-size: $normal-font-size;
@@ -137,7 +137,7 @@ body {
       }
     }
 
-    span {
+    span.cross {
       position: absolute;
       top: 11px;
       right: 20px;
@@ -179,16 +179,21 @@ body {
   }
 }
 
-footer {
-  position: absolute;
+footer { 
+  width: 100%;
+  position: fixed;
   bottom: 0;
-  margin-bottom: 10px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: $bg-color;
 
   p {
     color: $text-color;
     font-size: $footer-font-site;
     font-family: $josefin-sans;
+    padding: 12px;
 
     a {
       color: $white-color;

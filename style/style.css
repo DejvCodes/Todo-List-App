@@ -144,17 +144,17 @@ body {
   border: 1px solid #81828F;
   background: no-repeat url("/img/icon-check.svg") center, linear-gradient(#1B2DB4, #CA00E4);
 }
-.container li.one-item p {
+.container li.one-item p.text {
   color: #E9E9E9;
   font-family: "Josefin Sans", serif;
   font-size: 19px;
   margin: 5px 28px 0 30px;
 }
-.container li.one-item p.complete {
+.container li.one-item p.text.complete {
   color: #81828F;
   text-decoration: line-through;
 }
-.container li.one-item span {
+.container li.one-item span.cross {
   position: absolute;
   top: 11px;
   right: 20px;
@@ -164,7 +164,7 @@ body {
   pointer-events: auto;
   cursor: pointer;
 }
-.container li.one-item span:hover {
+.container li.one-item span.cross:hover {
   color: #FF0000;
 }
 .container .todo-info {
@@ -198,15 +198,20 @@ body {
 }
 
 footer {
-  position: absolute;
+  width: 100%;
+  position: fixed;
   bottom: 0;
-  margin-bottom: 10px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #101016;
 }
 footer p {
   color: #81828F;
   font-size: 14px;
   font-family: "Josefin Sans", serif;
+  padding: 12px;
 }
 footer p a {
   color: #E9E9E9;
