@@ -53,5 +53,5 @@ if (addBtn) {
         addTask()
     })
 } else {
-    console.error("Add button not found.")
+    console.error("Add button not found!")
 }
