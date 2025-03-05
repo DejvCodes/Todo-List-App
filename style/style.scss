@@ -5,6 +5,7 @@
   width: 0.8rem;
   background: $grey-color;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
   background: $neon-color-blue;
@@ -117,7 +118,7 @@ body {
 
     // &:hover::before {
     //   background-image: url("/img/icon-check.svg");
-    // }
+    // } 
 
     &.complete::before {
       border: 1px solid $text-color;
