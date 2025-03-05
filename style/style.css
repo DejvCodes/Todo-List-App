@@ -130,7 +130,7 @@ body {
 .container li.one-item::before {
   content: "";
   position: absolute;
-  top: 17px;
+  top: 16px;
   left: 20px;
   width: 20px;
   height: 20px;
@@ -158,8 +158,8 @@ body {
   position: absolute;
   top: 7px;
   right: 20px;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 32px !important;
+  font-weight: 500 !important;
   color: #81828F;
   transition: color 0.2s linear;
   pointer-events: auto;
