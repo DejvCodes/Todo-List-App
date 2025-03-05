@@ -227,7 +227,7 @@ footer p a:hover {
     position: relative;
   }
   .container li.one-item::before {
-    top: 18px;
+    top: 17.5px;
   }
   .container li.one-item span.cross {
     top: 9px;
