@@ -2,7 +2,7 @@
   "name": "to-do-list",
   "version": "1.0.0",
   "main": "script.js",
-  "keywords": ["todo", "task manager", "to-do list", "productivity"],
+  "keywords": ["todo", "task manager", "to-do list", "productivity", "add task"],
   "author": "DejvCodes - David Kalmus",
   "license": "MIT",
   "description": "Todo List App built with HTML, CSS (SCSS), JavaScript and TypeScript"
