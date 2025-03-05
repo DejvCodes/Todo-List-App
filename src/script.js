@@ -46,5 +46,5 @@ if (addBtn) {
     });
 }
 else {
-    console.error("Add button not found.");
+    console.error("Add button not found!");
 }
