@@ -19,7 +19,7 @@
   padding: 20px;
   outline: none;
   border: none;
-} 
+}
 
 @mixin button {
   width: 74px;
@@ -27,6 +27,7 @@
   color: $text-color;
   background: $bg-color;
   font-size: $small-font-size;
+  font-weight: 500;
   border-radius: 0 8px 8px 0;
   transition: all 0.2s linear;
   outline: none;

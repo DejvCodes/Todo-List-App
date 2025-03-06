@@ -5,6 +5,7 @@
   width: 0.8rem;
   background: $grey-color;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
   background: $neon-color-blue;
@@ -29,8 +30,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 230px;
-  background: url("/img/background.jpg") no-repeat bottom / cover;
+  height: 233px;
+  background: url("/images/bg-desktop.jpg") no-repeat bottom / cover;
   box-shadow: 0 0 10px 5px $neon-color-blue;
   z-index: -1;
 }
@@ -117,8 +118,8 @@ body {
 
     &.complete::before {
       border: 1px solid $text-color;
-      background: no-repeat url("/img/icon-check.svg") center, 
-                  linear-gradient($neon-color-blue, $neon-color-pink);
+      background: no-repeat url("/images/icon-check.svg") center,
+        linear-gradient($neon-color-blue, $neon-color-pink);
     }
 
     p.text {
@@ -143,7 +144,7 @@ body {
       transition: color 0.2s linear;
       pointer-events: auto;
       cursor: pointer;
-    
+
       &:hover {
         color: $red-color;
       }
@@ -157,12 +158,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 2px;
 
     p.todo-count {
       margin-left: 20px;
     }
 
-    button.clear-completed {  
+    button.clear-completed {
       @include basic;
       transition: color 0.2s linear;
       margin-right: 20px;
@@ -176,7 +178,7 @@ body {
   }
 }
 
-footer { 
+footer {
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -203,21 +205,43 @@ footer {
   }
 }
 
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media screen and (max-width: 550px) {
+  .bg-img {
+    height: 215px;
+    background: url("/images/bg-mobile.jpg") no-repeat bottom / cover;
+  }
 
-
-
-@media screen and (max-width: 500px) {
   .container {
-  li.one-item {
-    position: relative;
+    padding: 60px 20px;
 
-    &::before {
-      top: 17px;
+    h1.todo-title {
+      letter-spacing: 7px;
+      margin-bottom: 22px;
     }
 
-    span.cross {
-      top: 9px;
+    li.one-item {
+      position: relative;
+
+      &::before {
+        top: 17px;
+      }
+
+      span.cross {
+        top: 9px;
+      }
+    }
+
+    .todo-info {
+      font-size: $small-font-size;
+
+      p.todo-count {
+        font-size: $small-font-size;
+      }
+
+      button.clear-completed {
+        font-size: $small-font-size;
+      }
     }
   }
-}
 }
