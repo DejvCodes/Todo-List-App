@@ -2,12 +2,11 @@
 @import "partials/variables";
 
 ::-webkit-scrollbar {
-  width: 0.8rem;
+  width: 0.6rem;
   background: $grey-color;
 }
-
 ::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   background: $neon-color-blue;
 }
 
@@ -253,4 +252,4 @@ footer {
       }
     }
   }
-}
+} 

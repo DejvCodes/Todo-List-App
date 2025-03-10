@@ -4,12 +4,12 @@
 /* ---------- FONT FAMILY ---------- */
 /* ---------- FONT SIZE ---------- */
 ::-webkit-scrollbar {
-  width: 0.8rem;
+  width: 0.6rem;
   background: #191A29;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   background: #1B2DB4;
 }
 
