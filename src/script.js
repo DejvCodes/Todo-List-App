@@ -26,9 +26,9 @@ const addTask = () => {
         isCompleted: false,
     };
     allTasks.push(newTask);
+    numOfItemsLeft();
     saveTasks();
     createNewTask(newTask);
-    numOfItemsLeft();
     inputBox.value = "";
 };
 // Function to create and display task
