@@ -142,7 +142,7 @@ body {
   pointer-events: auto;
   cursor: pointer;
 }
-.container li.one-item.complete::before {
+.container li.one-item.completed::before {
   border: 1px solid #81828F;
   background: no-repeat url("/images/icon-check.svg") center, linear-gradient(#1B2DB4, #CA00E4);
 }
@@ -152,7 +152,7 @@ body {
   font-size: 19px;
   margin: 5px 28px 0 30px;
 }
-.container li.one-item p.text.complete {
+.container li.one-item p.text.completed {
   color: #81828F;
   text-decoration: line-through;
 }
@@ -183,7 +183,7 @@ body {
   justify-content: space-between;
   padding-top: 2px;
 }
-.container .todo-info p.todo-count {
+.container .todo-info p.num-of-tasks {
   margin-left: 20px;
 }
 .container .todo-info button.clear-completed {
@@ -250,7 +250,7 @@ footer p a:hover {
   .container .todo-info {
     font-size: 17px;
   }
-  .container .todo-info p.todo-count {
+  .container .todo-info p.num-of-tasks {
     font-size: 17px;
   }
   .container .todo-info button.clear-completed {

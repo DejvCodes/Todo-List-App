@@ -117,7 +117,7 @@ body {
       cursor: pointer;
     }
 
-    &.complete::before {
+    &.completed::before {
       border: 1px solid $text-color;
       background: no-repeat url("/images/icon-check.svg") center,
         linear-gradient($neon-color-blue, $neon-color-pink);
@@ -129,7 +129,7 @@ body {
       font-size: $normal-font-size;
       margin: 5px 28px 0 30px;
 
-      &.complete {
+      &.completed {
         color: $text-color;
         text-decoration: line-through;
       }
@@ -161,7 +161,7 @@ body {
     justify-content: space-between;
     padding-top: 2px;
 
-    p.todo-count {
+    p.num-of-tasks {
       margin-left: 20px;
     }
 
@@ -236,7 +236,7 @@ footer {
     .todo-info {
       font-size: $small-font-size;
 
-      p.todo-count {
+      p.num-of-tasks {
         font-size: $small-font-size;
       }
 
