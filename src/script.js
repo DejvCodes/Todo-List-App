@@ -25,95 +25,87 @@ const addTask = () => {
         text: keyword,
         isCompleted: false,
     };
-    allTasks.push(newTask);
-    numOfItemsLeft();
-    saveTasks();
-    createNewTask(newTask);
-    inputBox.value = "";
+    allTasks.push(newTask); // Add newTask to the allTasks
+    saveTasks(); // Save tasks to local storage
+    createNewTask(newTask); // Render newTask
+    numOfItemsLeft(); // Update remaining task count
+    inputBox.value = ""; // Clear inputBox
 };
 // Function to create and display task
 const createNewTask = (task) => {
     // Destructuring
     const { id, text, isCompleted } = task;
-    // Element li (class - one-item)
+    // Create li element (one-item)
     const elementLi = document.createElement('li');
-    elementLi.setAttribute("data-id", id.toString());
+    elementLi.dataset.id = id.toString();
     elementLi.classList.add("one-item");
-    if (isCompleted) {
+    if (isCompleted)
         elementLi.classList.add("completed");
-    }
-    todoItems.appendChild(elementLi);
-    // Adding event listener to <li> to click on :: before
+    // Click event on one-item::before
     elementLi.addEventListener('click', (event) => {
-        // Getting click position
+        // Click position
         const clickX = event.clientX - elementLi.getBoundingClientRect().left;
         // Validation
-        if (clickX) {
+        if (clickX)
             toggleTaskCompletion(id);
-        }
     });
-    // Element p (class - text)
+    // Create p element (text)
     const elementP = document.createElement('p');
     elementP.textContent = text;
     elementP.classList.add("text");
-    if (isCompleted) {
+    if (isCompleted)
         elementP.classList.add("completed");
-    }
     elementLi.appendChild(elementP);
-    // Element span (class - cross) - delete button
+    // Create span element (cross) - delete button
     const elementSpan = document.createElement('span');
     elementSpan.innerHTML = '\u00d7';
     elementSpan.classList.add("cross");
-    elementSpan.addEventListener('click', (e) => {
-        // Zabrání přepnutí isCompleted při kliknutí na delete
-        e.stopPropagation();
-        deleteTask(id);
-    });
+    elementSpan.addEventListener('click', () => deleteTask(id));
     elementLi.appendChild(elementSpan);
+    // Append task to list
+    todoItems.appendChild(elementLi);
 };
 // Function to toggle task completion
 const toggleTaskCompletion = (taskId) => {
-    const findCompleteTask = allTasks.find(oneTask => oneTask.id === taskId);
-    // Validation
-    if (findCompleteTask) {
-        findCompleteTask.isCompleted = !findCompleteTask.isCompleted;
-        saveTasks();
-        numOfItemsLeft();
-        const taskElementLi = todoItems.querySelector(`[data-id="${taskId}"]`);
-        taskElementLi === null || taskElementLi === void 0 ? void 0 : taskElementLi.classList.toggle("completed");
-        const textElementP = taskElementLi === null || taskElementLi === void 0 ? void 0 : taskElementLi.querySelector("p.text");
-        textElementP === null || textElementP === void 0 ? void 0 : textElementP.classList.toggle("completed");
-    }
-};
-// Function to delete a task
-const deleteTask = (taskId) => {
-    allTasks = allTasks.filter(oneTask => oneTask.id !== taskId);
+    var _a;
+    const task = allTasks.find((oneTask) => oneTask.id === taskId);
+    if (!task)
+        return;
+    task.isCompleted = !task.isCompleted;
     saveTasks();
     numOfItemsLeft();
     const taskElementLi = todoItems.querySelector(`[data-id="${taskId}"]`);
-    if (taskElementLi) {
-        todoItems.removeChild(taskElementLi);
-    }
+    if (!taskElementLi)
+        return;
+    taskElementLi === null || taskElementLi === void 0 ? void 0 : taskElementLi.classList.toggle("completed");
+    (_a = taskElementLi.querySelector("p.text")) === null || _a === void 0 ? void 0 : _a.classList.toggle("completed");
 };
-// Function numOfItemsLeft
+// Function to delete a task
+const deleteTask = (taskId) => {
+    allTasks = allTasks.filter((oneTask) => oneTask.id !== taskId);
+    saveTasks();
+    numOfItemsLeft();
+    const taskElementLi = todoItems.querySelector(`[data-id="${taskId}"]`);
+    if (!taskElementLi)
+        return;
+    taskElementLi.remove();
+};
+// Function to update the number of remaining tasks
 const numOfItemsLeft = () => {
-    const itemsLeft = allTasks.filter(task => task.isCompleted === false).length.toString();
+    const itemsLeft = allTasks.filter((task) => !task.isCompleted).length.toString();
     numOfTasks.textContent = itemsLeft;
 };
 // Function to load tasks from localStorage
 const loadTasks = () => {
     numOfItemsLeft();
-    allTasks.forEach(task => createNewTask(task));
+    allTasks.forEach((task) => createNewTask(task));
 };
-// Calling the addTask() function after the addBtn button is pressed
-if (addBtn) {
-    addBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        addTask();
-    });
-}
-else {
+// Event listener for addBtn
+addBtn === null || addBtn === void 0 ? void 0 : addBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    addTask();
+});
+if (!addBtn)
     console.error("Add button not found!");
-}
 // Load tasks on page load
 loadTasks();
