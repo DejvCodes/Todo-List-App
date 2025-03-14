@@ -1,2 +1,2 @@
-## To-Do List App
+## Todo List App
 in development 
