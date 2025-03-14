@@ -144,7 +144,8 @@ const hideMessage = (): void => {
 
 // Function to update the number of remaining tasks
 const numOfItemsLeft = (): void => {
-    numOfTasks.textContent = allTasks.filter((oneTask) => !oneTask.isCompleted).length.toString()
+    const itemsLeft = allTasks.filter((oneTask) => !oneTask.isCompleted)
+    numOfTasks.textContent = itemsLeft.length.toString()
 }
 
 // Function to save tasks to localStorage
@@ -162,8 +163,8 @@ const saveTasks = (): void => {
 const loadTasks = (): void => {
     try {
         allTasks.forEach((oneTask) => createNewTask(oneTask))
-        numOfItemsLeft()
-        hideMessage()
+        numOfItemsLeft() // Update task counter
+        hideMessage() // Hide message
     } catch (error) {
         console.error("Error while loading tasks:", error)
     }

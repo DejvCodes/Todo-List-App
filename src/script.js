@@ -92,7 +92,8 @@ const hideMessage = () => {
     }
 };
 const numOfItemsLeft = () => {
-    numOfTasks.textContent = allTasks.filter((oneTask) => !oneTask.isCompleted).length.toString();
+    const itemsLeft = allTasks.filter((oneTask) => !oneTask.isCompleted);
+    numOfTasks.textContent = itemsLeft.length.toString();
 };
 const saveTasks = () => {
     try {
