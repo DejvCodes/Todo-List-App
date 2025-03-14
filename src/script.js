@@ -24,6 +24,8 @@ const addTask = () => {
 };
 const createNewTask = (task) => {
     const { id, text, isCompleted } = task;
+    if (todoItems.querySelector(`[data-id="${id}"]`))
+        return;
     const elementLi = document.createElement("li");
     elementLi.dataset.id = id.toString();
     elementLi.classList.add("one-item");
@@ -31,8 +33,7 @@ const createNewTask = (task) => {
         elementLi.classList.add("completed");
     elementLi.addEventListener("click", (event) => {
         event.stopPropagation();
-        const clickX = event.clientX - elementLi.getBoundingClientRect().left;
-        if (event.target.tagName !== "SPAN" && clickX) {
+        if (event.target !== elementSpan) {
             toggleTaskCompletion(id);
         }
     });
@@ -71,17 +72,16 @@ const deleteTask = (taskId) => {
 };
 const clearCompleted = () => {
     const completedTasks = allTasks.filter((oneTask) => oneTask.isCompleted);
-    if (completedTasks.length > 0) {
-        completedTasks.forEach((oneTask) => {
-            const taskElementLi = todoItems.querySelector(`[data-id="${oneTask.id}"]`);
-            taskElementLi === null || taskElementLi === void 0 ? void 0 : taskElementLi.remove();
-        });
-        allTasks = allTasks.filter((oneTask) => !oneTask.isCompleted);
-        saveTasks();
-    }
-    else {
+    if (completedTasks.length === 0) {
         alert("You don't have any completed tasks...");
+        return;
     }
+    completedTasks.forEach((oneTask) => {
+        const taskElementLi = todoItems.querySelector(`[data-id="${oneTask.id}"]`);
+        taskElementLi === null || taskElementLi === void 0 ? void 0 : taskElementLi.remove();
+    });
+    allTasks = allTasks.filter((oneTask) => !oneTask.isCompleted);
+    saveTasks();
 };
 const hideMessage = () => {
     if (allTasks.length === 0) {
@@ -114,22 +114,16 @@ const loadTasks = () => {
         console.error("Error while loading tasks:", error);
     }
 };
-if (addBtn) {
-    addBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        addTask();
-    });
-}
-else {
-    console.error("Add button not found!");
-}
-if (clearCompletedBtn) {
-    clearCompletedBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        clearCompleted();
-    });
-}
-else {
-    console.error("Clear Completed button not found!");
-}
+addBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    addTask();
+});
+if (!addBtn)
+    throw new Error("Add button not found!");
+clearCompletedBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    clearCompleted();
+});
+if (!clearCompletedBtn)
+    throw new Error("Clear Completed button not found!");
 loadTasks();

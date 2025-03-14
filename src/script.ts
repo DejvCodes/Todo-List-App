@@ -40,6 +40,9 @@ const createNewTask = (task: Task): void => {
     // Destructure task object
     const { id, text, isCompleted } = task
 
+    // Validation
+    if (todoItems.querySelector(`[data-id="${id}"]`)) return
+
     // Create <li> element (one-item)
     const elementLi = document.createElement("li")
     elementLi.dataset.id = id.toString()
@@ -49,10 +52,8 @@ const createNewTask = (task: Task): void => {
     // Click event on one-item::before
     elementLi.addEventListener("click", (event: MouseEvent) => {
         event.stopPropagation()
-        // Click position
-        const clickX: number = event.clientX - elementLi.getBoundingClientRect().left;
         // Validation
-        if ((event.target as HTMLElement).tagName !== "SPAN" && clickX) {
+        if (event.target !== elementSpan) {
             toggleTaskCompletion(id)
         }
     })
@@ -116,19 +117,20 @@ const clearCompleted = (): void => {
     const completedTasks = allTasks.filter((oneTask) => oneTask.isCompleted)
 
     // Validation
-    if (completedTasks.length > 0) {
-        // Remove completed tasks from the DOM
-        completedTasks.forEach((oneTask) => {
-            const taskElementLi = todoItems.querySelector(`[data-id="${oneTask.id}"]`)
-            taskElementLi?.remove()
-        })
-
-        // Update the allTask array - leave only unfinished tasks
-        allTasks = allTasks.filter((oneTask) => !oneTask.isCompleted)
-        saveTasks() // Save updated task state
-    } else {
+    if (completedTasks.length === 0) {
         alert("You don't have any completed tasks...")
+        return
     }
+
+    // Remove completed tasks from the DOM
+    completedTasks.forEach((oneTask) => {
+        const taskElementLi = todoItems.querySelector(`[data-id="${oneTask.id}"]`)
+        taskElementLi?.remove()
+    })
+
+    // Update the allTask array - leave only unfinished tasks
+    allTasks = allTasks.filter((oneTask) => !oneTask.isCompleted)
+    saveTasks() // Save updated task state
 }
 
 // Function hide or show message
@@ -168,20 +170,18 @@ const loadTasks = (): void => {
 }
 
 // Event listener for addBtn
-if (addBtn) {
-    addBtn.addEventListener("click", (event: MouseEvent) => {
-        event.preventDefault()
-        addTask()
-    })
-} else { console.error("Add button not found!") }
+addBtn.addEventListener("click", (event: MouseEvent) => {
+    event.preventDefault()
+    addTask()
+})
+if (!addBtn) throw new Error("Add button not found!")
 
 // Event listener for clearCompletedBtn
-if (clearCompletedBtn) {
-    clearCompletedBtn.addEventListener("click", (event: MouseEvent) => {
-        event.preventDefault()
-        clearCompleted()
-    })
-} else { console.error("Clear Completed button not found!") }
+clearCompletedBtn.addEventListener("click", (event: MouseEvent) => {
+    event.preventDefault()
+    clearCompleted()
+})
+if (!clearCompletedBtn) throw new Error("Clear Completed button not found!")
 
 // Load tasks on page load
 loadTasks()
