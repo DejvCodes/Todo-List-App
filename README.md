@@ -14,18 +14,19 @@ Tasks are stored in local storage.
 ## 📱 Screenshots
 <img src="/images/Todo List App 1.jpg" width="350"> <img src="/images/Todo List App 2.jpg" width="350">
 
-## 💻 Tech Stack
-[![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
-
-## 🌐 Link
-<a href="https://todo-list-app-dejvcodes.netlify.app/">Todo List App</a>
-
 ## 🏃🏻 How to Run
 1. Clone the repository: <br>
     • git clone https://github.com/DejvCodes/Todo-List-App.git <br>
     • cd Todo-List-App <br>
     
 2. Open index.html in a browser.
+
+## 💻 Tech Stack
+[![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
+
+## 🌐 Link
+<a href="https://todo-list-app-dejvcodes.netlify.app/">Todo List App</a>
+
 
 ## License 🔐
 [MIT License](LICENSE) 
