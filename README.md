@@ -4,9 +4,10 @@ This project allows users to manage tasks efficiently with features such as addi
 Tasks are stored in local storage.
 
 ## Features
-✔ Add Tasks – Easily add new task using a simple input field and button <br>
-✔ Mark as Completed – Click on a task to mark it as completed <br>
-✔ Delete Tasks – Remove individual task using a delete button <br>
-✔ Clear Completed Tasks – Quickly remove all completed tasks with one click <br>
-✔ Data storage – All tasks are stored in local storage <br>
-✔ Task Counter – Displays the number of remaining tasks <br>
+• Add Tasks – Easily add new task using a simple input field and button <br>
+• Mark as Completed – Click on a task to mark it as completed <br>
+• Delete Tasks – Remove individual task using a delete button <br>
+• Clear Completed Tasks – Quickly remove all completed tasks with one click <br>
+• Data storage – All tasks are stored in local storage <br>
+• Task Counter – Displays the number of remaining tasks <br>
+
