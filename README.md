@@ -4,12 +4,12 @@ This project allows users to manage tasks efficiently with features such as addi
 Tasks are stored in local storage.
 
 ## 🚀 Features
-• Add Tasks – Easily add new task using a simple input field and button <br>
-• Mark as Completed – Click on a task to mark it as completed <br>
-• Delete Tasks – Remove individual task using a delete button <br>
-• Clear Completed Tasks – Quickly remove all completed tasks with one click <br>
-• Data storage – All tasks are stored in local storage <br>
-• Task Counter – Displays the number of remaining tasks <br>
+• Add Tasks – Easily add new task using a simple input field and button. <br>
+• Mark as Completed – Click on a task to mark it as completed. <br>
+• Delete Tasks – Remove individual task using a delete button. <br>
+• Clear Completed Tasks – Quickly remove all completed tasks with one click. <br>
+• Data Storage – All tasks are stored in local storage. <br>
+• Task Counter – Displays the number of remaining tasks. <br>
 
 ## 📱 Screenshots
 <img src="/images/Todo List App 1.jpg" width="350"> <img src="/images/Todo List App 2.jpg" width="350">
@@ -18,9 +18,9 @@ Tasks are stored in local storage.
 1. Clone the repository: <br>
     • git clone https://github.com/DejvCodes/Todo-List-App.git <br>
     • cd Todo-List-App <br>
-2. Open index.html in a browser <br>
+2. Open index.html in a live server or browser <br>
 
-## 💻 Tech Stack
+## 💻 TechStack
 [![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
 
 ## 🌐 Link
