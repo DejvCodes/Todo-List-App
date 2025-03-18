@@ -13,7 +13,7 @@ let allTasks: Task[] = JSON.parse(localStorage.getItem("allTasks") || "[]")
 type Task = { id: number, text: string, isCompleted: boolean }
 
 // Function to add a new task
-const addTask = (): void => {
+const addTasks = (): void => {
     const keyword: string = inputBox.value.trim()
 
     // Validation
@@ -73,7 +73,7 @@ const createNewTask = (task: Task): void => {
     // Click event on cross (deleteTask)
     elementSpan.addEventListener("click", (event: MouseEvent) => {
         event.stopPropagation()
-        deleteTask(id)
+        deleteTasks(id)
     })
     elementLi.appendChild(elementSpan)
 
@@ -101,7 +101,7 @@ const toggleTaskCompletion = (taskId: number): void => {
 }
 
 // Function to delete a task by ID
-const deleteTask = (taskId: number): void => {
+const deleteTasks = (taskId: number): void => {
     // Remove task from the allTask array
     allTasks = allTasks.filter((oneTask) => oneTask.id !== taskId)
     saveTasks() // Save updated task state
@@ -173,7 +173,7 @@ const loadTasks = (): void => {
 // Event listener for addBtn
 addBtn.addEventListener("click", (event: MouseEvent) => {
     event.preventDefault()
-    addTask()
+    addTasks()
 })
 if (!addBtn) throw new Error("Add button not found!")
 

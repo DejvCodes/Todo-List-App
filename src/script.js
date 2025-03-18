@@ -6,7 +6,7 @@ const todoItems = document.querySelector(".todo-items");
 const numOfTasks = document.querySelector(".num-of-tasks span");
 const clearCompletedBtn = document.querySelector(".clear-completed");
 let allTasks = JSON.parse(localStorage.getItem("allTasks") || "[]");
-const addTask = () => {
+const addTasks = () => {
     const keyword = inputBox.value.trim();
     if (!keyword) {
         alert("Please enter a new todo...");
@@ -48,7 +48,7 @@ const createNewTask = (task) => {
     elementSpan.classList.add("cross");
     elementSpan.addEventListener("click", (event) => {
         event.stopPropagation();
-        deleteTask(id);
+        deleteTasks(id);
     });
     elementLi.appendChild(elementSpan);
     todoItems.appendChild(elementLi);
@@ -64,7 +64,7 @@ const toggleTaskCompletion = (taskId) => {
     taskElementLi === null || taskElementLi === void 0 ? void 0 : taskElementLi.classList.toggle("completed");
     taskElementP === null || taskElementP === void 0 ? void 0 : taskElementP.classList.toggle("completed");
 };
-const deleteTask = (taskId) => {
+const deleteTasks = (taskId) => {
     allTasks = allTasks.filter((oneTask) => oneTask.id !== taskId);
     saveTasks();
     const taskElementLi = todoItems.querySelector(`[data-id="${taskId}"]`);
@@ -117,7 +117,7 @@ const loadTasks = () => {
 };
 addBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    addTask();
+    addTasks();
 });
 if (!addBtn)
     throw new Error("Add button not found!");
