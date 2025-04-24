@@ -23,7 +23,7 @@ Tasks are stored in local storage.
 ## 💻 Tech Stack
 [![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
 
-## 🌐 Link
+## 🌐 Live Demo
 <a href="https://todo-list-app-dejvcodes.netlify.app/">Todo List App</a>
 
 ## 🔐 License
