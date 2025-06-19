@@ -20,7 +20,7 @@ Tasks are stored in local storage.
     • cd Todo-List-App <br>
 2. Open index.html in a live server or browser <br>
 
-## 💻 Tech Stack
+## 💻 Tech Stack 
 [![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
 
 ## 🌐 Live Demo
