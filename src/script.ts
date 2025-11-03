@@ -17,6 +17,7 @@ type Task = { id: number, text: string, isCompleted: boolean };
 const showLoader = (): void => {
     loader.style.display = "flex";
 }
+
 const hideLoader = (): void => {
     loader.style.display = "none";
 }

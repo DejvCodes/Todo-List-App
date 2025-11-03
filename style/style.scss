@@ -1,22 +1,18 @@
 @import "partials/mixins";
 @import "partials/variables";
-
 ::-webkit-scrollbar {
   width: 0.6rem;
   background: $grey-color;
 }
-
 ::-webkit-scrollbar-thumb {
   border-radius: 0.4rem;
   background: $neon-color-blue;
 }
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -24,7 +20,6 @@ body {
   justify-content: center;
   background: $bg-color;
 }
-
 .bg-img {
   position: absolute;
   top: 0;
@@ -35,7 +30,6 @@ body {
   box-shadow: 0 0 10px 5px $neon-color-blue;
   z-index: -1;
 }
-
 .container {
   width: 100%;
   max-width: 540px;
@@ -43,7 +37,6 @@ body {
   flex-direction: column;
   padding: 65px 25px;
   margin: 0 auto;
-
   h1.todo-title {
     color: $white-color;
     font-family: $josefin-sans;
@@ -52,12 +45,10 @@ body {
     letter-spacing: 10px;
     margin-bottom: 34px;
   }
-
   form.input-form {
     display: flex;
     align-items: center;
     outline: none;
-
     input {
       @include input;
       flex-grow: 1;
@@ -66,22 +57,18 @@ body {
         color: $text-color;
       }
     }
-
     button {
       @include button
     }
   }
-
   .todo-list {
     border-radius: 8px;
     overflow: hidden;
     margin-top: 20px;
   }
-
   ul.todo-items {
     width: 100%;
   }
-
   li.message {
     @include basic;
     width: 100%;
@@ -92,7 +79,6 @@ body {
     border-bottom: 2px solid $border-color;
     padding-top: 5px;
   }
-
   li.one-item {
     position: relative;
     width: 100%;
@@ -117,20 +103,17 @@ body {
       pointer-events: auto;
       cursor: pointer;
     }
-
     &.completed::before {
       border: 1px solid $text-color;
       background: no-repeat url("/images/icon-check.svg") center,
         linear-gradient($neon-color-blue, $neon-color-pink);
       animation: pulse 0.5s ease-in-out;
     }
-
     @keyframes pulse {
       0% { transform: scale(1) translate(0, 0); }
       50% { transform: scale(1.2) translate(0px, 0px); }
       100% { transform: scale(1) translate(0, 0); }
     }
-
     p.text {
       color: $white-color;
       font-family: $josefin-sans;
@@ -142,7 +125,6 @@ body {
         text-decoration: line-through;
       }
     }
-
     span.cross {
       position: absolute;
       top: 7px;
@@ -168,11 +150,9 @@ body {
     align-items: center;
     justify-content: space-between;
     padding-top: 2px;
-
     p.num-of-tasks {
       margin-left: 20px;
     }
-
     button.clear-completed {
       @include basic;
       transition: color 0.2s linear;
@@ -186,7 +166,6 @@ body {
     }
   }
 }
-
 footer {
   width: 100%;
   position: fixed;
@@ -196,13 +175,11 @@ footer {
   align-items: center;
   justify-content: center;
   background: $bg-color;
-
   p {
     color: $text-color;
     font-size: $footer-font-site;
     font-family: $josefin-sans;
     padding: 12px;
-
     a {
       color: $white-color;
       transition: all 0.2s linear;
@@ -213,22 +190,18 @@ footer {
     }
   }
 }
-
 /* ---------- RESPONSIVE DESIGN ---------- */
 @media screen and (max-width: 550px) {
   .bg-img {
     height: 215px;
     background: url("/images/bg-mobile.jpg") no-repeat bottom / cover;
   }
-
   .container {
     padding: 60px 20px;
-
     h1.todo-title {
       letter-spacing: 7px;
       margin-bottom: 22px;
     }
-
     li.one-item {
       position: relative;
 
@@ -240,21 +213,17 @@ footer {
         top: 9px;
       }
     }
-
     .todo-info {
       font-size: $small-font-size;
-
       p.num-of-tasks {
         font-size: $small-font-size;
       }
-
       button.clear-completed {
         font-size: $small-font-size;
       }
     }
   }
 }
-
 /* ---------- LOADER CONTAINER ---------- */
 .loader {
   display: none;
@@ -275,7 +244,6 @@ footer {
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
