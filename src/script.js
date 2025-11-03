@@ -136,8 +136,8 @@ if (!clearCompletedBtn)
     throw new Error("Clear Completed button not found!");
 window.addEventListener("DOMContentLoaded", () => {
     showLoader();
+    loadTasks();
     setTimeout(() => {
-        loadTasks();
         hideLoader();
-    }, 500);
+    }, 1200);
 });

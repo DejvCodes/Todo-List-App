@@ -195,10 +195,10 @@ if (!clearCompletedBtn) throw new Error("Clear Completed button not found!");
 
 // Load tasks on page load + show loader
 window.addEventListener("DOMContentLoaded", () => {
-    showLoader()
+    showLoader();
+    loadTasks();
     // Simulate loading delay
     setTimeout(() => {
-        loadTasks()
-        hideLoader()
-    }, 500)
+        hideLoader();
+    }, 1200);
 });
