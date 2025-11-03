@@ -5,7 +5,14 @@ const message = document.querySelector(".message");
 const todoItems = document.querySelector(".todo-items");
 const numOfTasks = document.querySelector(".num-of-tasks span");
 const clearCompletedBtn = document.querySelector(".clear-completed");
+const loader = document.getElementById("loader");
 let allTasks = JSON.parse(localStorage.getItem("allTasks") || "[]");
+const showLoader = () => {
+    loader.style.display = "flex";
+};
+const hideLoader = () => {
+    loader.style.display = "none";
+};
 const addTasks = () => {
     const keyword = inputBox.value.trim();
     if (!keyword) {
@@ -106,6 +113,7 @@ const saveTasks = () => {
     }
 };
 const loadTasks = () => {
+    showLoader();
     try {
         allTasks.forEach((oneTask) => createNewTask(oneTask));
         numOfItemsLeft();
@@ -113,6 +121,11 @@ const loadTasks = () => {
     }
     catch (error) {
         console.error("Error while loading tasks:", error);
+    }
+    finally {
+        setTimeout(() => {
+            hideLoader();
+        }, 1000);
     }
 };
 addBtn.addEventListener("click", (event) => {

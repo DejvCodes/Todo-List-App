@@ -5,6 +5,7 @@
   width: 0.6rem;
   background: $grey-color;
 }
+
 ::-webkit-scrollbar-thumb {
   border-radius: 0.4rem;
   background: $neon-color-blue;
@@ -252,4 +253,29 @@ footer {
       }
     }
   }
-} 
+}
+
+/* ---------- LOADER CONTAINER ---------- */
+.loader {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
+/* ---------- SPINNER ---------- */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #333;
+  border-top-color: #a855f7;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
