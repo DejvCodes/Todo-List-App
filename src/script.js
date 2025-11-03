@@ -13,6 +13,12 @@ const showLoader = () => {
 const hideLoader = () => {
     loader.style.display = "none";
 };
+window.addEventListener("load", () => {
+    showLoader();
+    setTimeout(() => {
+        hideLoader();
+    }, 1500);
+});
 const addTasks = () => {
     const keyword = inputBox.value.trim();
     if (!keyword) {
@@ -113,7 +119,6 @@ const saveTasks = () => {
     }
 };
 const loadTasks = () => {
-    showLoader();
     try {
         allTasks.forEach((oneTask) => createNewTask(oneTask));
         numOfItemsLeft();
@@ -121,11 +126,6 @@ const loadTasks = () => {
     }
     catch (error) {
         console.error("Error while loading tasks:", error);
-    }
-    finally {
-        setTimeout(() => {
-            hideLoader();
-        }, 1000);
     }
 };
 addBtn.addEventListener("click", (event) => {
