@@ -141,3 +141,6 @@ window.addEventListener("DOMContentLoaded", () => {
         hideLoader();
     }, 1000);
 });
+const footerYear = document.querySelector('footer p');
+const currentYear = new Date().getFullYear();
+footerYear.innerHTML = `Coded by <a href="https://dejvcodes.netlify.app/" target="_blank">DejvCodes</a>. © ${currentYear} David Kalmus.`;
