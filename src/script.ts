@@ -22,13 +22,6 @@ const hideLoader = (): void => {
     loader.style.display = "none";
 }
 
-window.addEventListener("load", () => {
-    showLoader();
-    setTimeout(() => {
-        hideLoader();
-    }, 1500); // Simulate loading delay
-});
-
 // Function to add a new task
 const addTasks = (): void => {
     const keyword: string = inputBox.value.trim();
@@ -200,5 +193,12 @@ clearCompletedBtn.addEventListener("click", (event: MouseEvent) => {
 })
 if (!clearCompletedBtn) throw new Error("Clear Completed button not found!");
 
-// Load tasks on page load
-loadTasks();
+// Load tasks on page load + show loader
+window.addEventListener("DOMContentLoaded", () => {
+    showLoader()
+    // Simulate loading delay
+    setTimeout(() => {
+        loadTasks()
+        hideLoader()
+    }, 500)
+});

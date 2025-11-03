@@ -13,12 +13,6 @@ const showLoader = () => {
 const hideLoader = () => {
     loader.style.display = "none";
 };
-window.addEventListener("load", () => {
-    showLoader();
-    setTimeout(() => {
-        hideLoader();
-    }, 1500);
-});
 const addTasks = () => {
     const keyword = inputBox.value.trim();
     if (!keyword) {
@@ -140,4 +134,10 @@ clearCompletedBtn.addEventListener("click", (event) => {
 });
 if (!clearCompletedBtn)
     throw new Error("Clear Completed button not found!");
-loadTasks();
+window.addEventListener("DOMContentLoaded", () => {
+    showLoader();
+    setTimeout(() => {
+        loadTasks();
+        hideLoader();
+    }, 500);
+});
