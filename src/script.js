@@ -139,5 +139,5 @@ window.addEventListener("DOMContentLoaded", () => {
     loadTasks();
     setTimeout(() => {
         hideLoader();
-    }, 1200);
+    }, 1000);
 });

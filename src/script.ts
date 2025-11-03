@@ -200,5 +200,5 @@ window.addEventListener("DOMContentLoaded", () => {
     // Simulate loading delay
     setTimeout(() => {
         hideLoader();
-    }, 1200);
+    }, 1000);
 });
