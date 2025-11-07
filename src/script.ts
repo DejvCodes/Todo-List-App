@@ -180,18 +180,18 @@ const loadTasks = (): void => {
 }
 
 // Event listener for addBtn
+if (!addBtn) throw new Error("Add button not found!");
 addBtn.addEventListener("click", (event: MouseEvent) => {
     event.preventDefault();
     addTasks();
 })
-if (!addBtn) throw new Error("Add button not found!");
 
 // Event listener for clearCompletedBtn
+if (!clearCompletedBtn) throw new Error("Clear Completed button not found!");
 clearCompletedBtn.addEventListener("click", (event: MouseEvent) => {
     event.preventDefault();
     clearCompleted();
 })
-if (!clearCompletedBtn) throw new Error("Clear Completed button not found!");
 
 // Load tasks on page load + show loader
 window.addEventListener("DOMContentLoaded", () => {

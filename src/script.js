@@ -122,18 +122,18 @@ const loadTasks = () => {
         console.error("Error while loading tasks:", error);
     }
 };
+if (!addBtn)
+    throw new Error("Add button not found!");
 addBtn.addEventListener("click", (event) => {
     event.preventDefault();
     addTasks();
 });
-if (!addBtn)
-    throw new Error("Add button not found!");
+if (!clearCompletedBtn)
+    throw new Error("Clear Completed button not found!");
 clearCompletedBtn.addEventListener("click", (event) => {
     event.preventDefault();
     clearCompleted();
 });
-if (!clearCompletedBtn)
-    throw new Error("Clear Completed button not found!");
 window.addEventListener("DOMContentLoaded", () => {
     showLoader();
     loadTasks();
