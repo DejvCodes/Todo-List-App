@@ -315,7 +315,8 @@ footer p a:hover {
     top: 11px;
   }
   .container li.one-item button.edit-btn {
-    top: 17.5px;
+    font-size: 24px !important;
+    top: 15.5px;
   }
   .container li.one-item p.text {
     margin-right: 85px;
