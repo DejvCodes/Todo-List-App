@@ -15,29 +15,32 @@
     <div class="bg-img"></div>
 
     <div class="container">
-        <h1 class="todo-title">TODO</h1>
+        <div class="header-with-lang">
+            <h1 class="todo-title">TODO</h1>
+            <button class="lang-toggle" id="langToggle">EN</button>
+        </div>
 
         <form class="input-form">
-            <input type="text" placeholder="Create a new todo...">
-            <button>Add</button>
+            <input type="text" placeholder="Create a new todo..." data-i18n-placeholder="inputPlaceholder">
+            <button data-i18n="addButton">Add</button>
         </form>
 
         <div class="filter-bubble">
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="active">Active</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
+                <button class="filter-btn" data-filter="active" data-i18n="filterActive">Active</button>
+                <button class="filter-btn" data-filter="completed" data-i18n="filterCompleted">Completed</button>
             </div>
         </div>
 
         <div class="todo-list">
             <ul class="todo-items">
-                <li class="message">Todo list is empty!</li>
+                <li class="message" data-i18n="emptyMessage">Todo list is empty!</li>
             </ul>
 
             <div class="todo-info">
-                <p class="num-of-tasks"><span></span> items left</p>
-                <button class="clear-completed">Clear Completed</button>
+                <p class="num-of-tasks"><span></span> <span data-i18n="itemsLeft">items left</span></p>
+                <button class="clear-completed" data-i18n="clearCompleted">Clear Completed</button>
             </div>
         </div>
     </div>
