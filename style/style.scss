@@ -161,6 +161,7 @@ body {
       right: 20px;
       font-size: 32px !important;
       font-weight: 500 !important;
+      line-height: 1;
       color: $text-color;
       transition: color 0.2s linear;
       pointer-events: auto;
@@ -176,9 +177,11 @@ body {
       right: 55px;
       font-size: 22px !important;
       font-weight: 500 !important;
+      line-height: 1;
       color: $text-color;
       background: none;
       border: none;
+      padding: 0;
       transition: color 0.2s linear;
       pointer-events: auto;
       cursor: pointer;
@@ -256,9 +259,11 @@ footer {
       span.cross {
         top: 7px;
         font-size: 38px !important;
+        line-height: 1;
       }
       button.edit-btn {
         font-size: 32px !important;
+        line-height: 1;
         top: 8.5px;
         right: 50px;
       }

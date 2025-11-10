@@ -74,9 +74,6 @@ body {
   border: none;
   flex-grow: 1;
 }
-.container form.input-form input::-moz-placeholder {
-  color: #81828F;
-}
 .container form.input-form input::placeholder {
   color: #81828F;
 }
@@ -213,6 +210,7 @@ body {
   right: 20px;
   font-size: 32px !important;
   font-weight: 500 !important;
+  line-height: 1;
   color: #81828F;
   transition: color 0.2s linear;
   pointer-events: auto;
@@ -227,9 +225,11 @@ body {
   right: 55px;
   font-size: 22px !important;
   font-weight: 500 !important;
+  line-height: 1;
   color: #81828F;
   background: none;
   border: none;
+  padding: 0;
   transition: color 0.2s linear;
   pointer-events: auto;
   cursor: pointer;
@@ -314,9 +314,11 @@ footer p a:hover {
   .container li.one-item span.cross {
     top: 7px;
     font-size: 38px !important;
+    line-height: 1;
   }
   .container li.one-item button.edit-btn {
     font-size: 32px !important;
+    line-height: 1;
     top: 8.5px;
     right: 50px;
   }
@@ -344,8 +346,7 @@ footer p a:hover {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 9999;
 }
 
@@ -396,4 +397,6 @@ footer p a:hover {
 
 .lang-toggle:hover {
   color: #E9E9E9;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
