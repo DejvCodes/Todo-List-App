@@ -6,10 +6,12 @@ Tasks are stored in local storage.
 ## 🚀 Features
 • Add Tasks – Easily add new tasks using a simple input field and button. <br>
 • Mark as Completed – Click on a task to mark it as completed. <br>
+• Edit Tasks – Edit existing tasks using the edit button. <br>
 • Delete Tasks – Remove individual task using a delete button. <br>
+• Filter Tasks – Filter tasks by All, Active or Completed status. <br>
 • Clear Completed Tasks – Quickly remove all completed tasks with one click. <br>
 • Data Storage – All tasks are stored locally in the browser. <br>
-• Task Counter – Displays the number of remaining tasks. <br> 
+• Task Counter – Displays the number of remaining tasks. <br>
 • Loader – Displays a smooth animated spinner during data loading for a better user experience. <br>
 
 ## 📱 Screenshots
