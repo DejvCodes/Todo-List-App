@@ -131,7 +131,7 @@ const createNewTask = (task: Task): void => {
 
     // Create edit button
     const editBtn = document.createElement("button");
-    editBtn.innerHTML = "✎";
+    editBtn.innerHTML = "&#9998;";
     editBtn.classList.add("edit-btn");
     editBtn.addEventListener("click", (event: MouseEvent) => {
         event.stopPropagation();

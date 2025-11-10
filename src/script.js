@@ -97,7 +97,7 @@ const createNewTask = (task) => {
         elementP.classList.add("completed");
     elementLi.appendChild(elementP);
     const editBtn = document.createElement("button");
-    editBtn.innerHTML = "✎";
+    editBtn.innerHTML = "&#9998;";
     editBtn.classList.add("edit-btn");
     editBtn.addEventListener("click", (event) => {
         event.stopPropagation();
