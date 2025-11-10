@@ -10,7 +10,8 @@ Tasks are stored in local storage.
 • Delete Tasks – Remove individual task using a delete button. <br>
 • Filter Tasks – Filter tasks by All, Active or Completed status. <br>
 • Clear Completed Tasks – Quickly remove all completed tasks with one click. <br>
-• Data Storage – All tasks are stored locally in the browser. <br>
+• Language Toggle – Switch between English and Czech with a single click. <br>
+• Data Storage – All tasks and language preference are stored locally in the browser. <br>
 • Task Counter – Displays the number of remaining tasks. <br>
 • Loader – Displays a smooth animated spinner during data loading for a better user experience. <br>
 
