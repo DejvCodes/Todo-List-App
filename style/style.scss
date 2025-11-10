@@ -156,12 +156,12 @@ body {
       }
     }
     span.cross {
+      display: block;
       position: absolute;
       top: 7px;
       right: 20px;
       font-size: 32px !important;
       font-weight: 500 !important;
-      line-height: 1;
       color: $text-color;
       transition: color 0.2s linear;
       pointer-events: auto;
@@ -177,7 +177,6 @@ body {
       right: 55px;
       font-size: 22px !important;
       font-weight: 500 !important;
-      line-height: 1;
       color: $text-color;
       background: none;
       border: none;
@@ -259,11 +258,9 @@ footer {
       span.cross {
         top: 7px;
         font-size: 38px !important;
-        line-height: 1;
       }
       button.edit-btn {
         font-size: 32px !important;
-        line-height: 1;
         top: 8.5px;
         right: 50px;
       }
