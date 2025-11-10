@@ -1,0 +1,13 @@
+{
+  "inputPlaceholder": "Create a new todo...",
+  "addButton": "Add",
+  "filterAll": "All",
+  "filterActive": "Active",
+  "filterCompleted": "Completed",
+  "emptyMessage": "Todo list is empty!",
+  "itemsLeft": "items left",
+  "clearCompleted": "Clear Completed",
+  "alertEmpty": "Please enter a new todo...",
+  "alertNoCompleted": "You don't have any completed tasks...",
+  "editPrompt": "Edit your task:"
+}
