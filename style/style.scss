@@ -337,15 +337,15 @@ footer {
 /* ---------- WINDOWS SPECIFIC FIXES ---------- */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ */
-  li.one-item button.edit-btn {
+  .container li.one-item button.edit-btn {
     font-size: 22px !important;
-    top: 12px;
+    top: 12px !important;
   }
 }
 @supports (-ms-ime-align: auto) {
   /* Edge */
-  li.one-item button.edit-btn {
+  .container li.one-item button.edit-btn {
     font-size: 22px !important;
-    top: 12px;
+    top: 12px !important;
   }
 }
