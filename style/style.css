@@ -313,11 +313,11 @@ footer p a:hover {
   }
   .container li.one-item span.cross {
     top: 7px;
-    font-size: 36px !important;
+    font-size: 38px !important;
   }
   .container li.one-item button.edit-btn {
-    font-size: 30px !important;
-    top: 11.5px;
+    font-size: 32px !important;
+    top: 8.5px;
     right: 50px;
   }
   .container li.one-item p.text {
