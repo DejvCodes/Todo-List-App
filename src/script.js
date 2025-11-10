@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 const inputBox = document.querySelector(".input-form input");
 const addBtn = document.querySelector(".input-form button");
 const message = document.querySelector(".message");
@@ -7,8 +16,43 @@ const numOfTasks = document.querySelector(".num-of-tasks span");
 const clearCompletedBtn = document.querySelector(".clear-completed");
 const loader = document.getElementById("loader");
 const filterBtns = document.querySelectorAll(".filter-btn");
+const langToggle = document.getElementById("langToggle");
 let allTasks = JSON.parse(localStorage.getItem("allTasks") || "[]");
 let currentFilter = "all";
+let currentLang = localStorage.getItem("language") || "en";
+let translations = {};
+const loadTranslations = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const enResponse = yield fetch('/locales/en.json');
+        const czResponse = yield fetch('/locales/cz.json');
+        translations.en = yield enResponse.json();
+        translations.cz = yield czResponse.json();
+    }
+    catch (error) {
+        console.error("Error loading translations:", error);
+    }
+});
+const switchLanguage = () => {
+    currentLang = currentLang === "en" ? "cz" : "en";
+    localStorage.setItem("language", currentLang);
+    updateUILanguage();
+    langToggle.textContent = currentLang.toUpperCase();
+};
+const updateUILanguage = () => {
+    const trans = translations[currentLang];
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (key && trans[key]) {
+            element.textContent = trans[key];
+        }
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (key && trans[key]) {
+            element.placeholder = trans[key];
+        }
+    });
+};
 const showLoader = () => {
     loader.style.display = "flex";
 };
@@ -18,7 +62,7 @@ const hideLoader = () => {
 const addTasks = () => {
     const keyword = inputBox.value.trim();
     if (!keyword) {
-        alert("Please enter a new todo...");
+        alert(translations[currentLang].alertEmpty);
         return;
     }
     const newTask = {
@@ -93,7 +137,7 @@ const deleteTasks = (taskId) => {
 const clearCompleted = () => {
     const completedTasks = allTasks.filter((oneTask) => oneTask.isCompleted);
     if (completedTasks.length === 0) {
-        alert("You don't have any completed tasks...");
+        alert(translations[currentLang].alertNoCompleted);
         return;
     }
     completedTasks.forEach((oneTask) => {
@@ -120,7 +164,7 @@ const editTask = (taskId) => {
     const task = allTasks.find((oneTask) => oneTask.id === taskId);
     if (!task)
         return;
-    const newText = prompt("Edit your task:", task.text);
+    const newText = prompt(translations[currentLang].editPrompt, task.text);
     if (newText === null || newText.trim() === "")
         return;
     task.text = newText.trim();
@@ -196,13 +240,21 @@ filterBtns.forEach((btn) => {
         applyFilter();
     });
 });
-window.addEventListener("DOMContentLoaded", () => {
+if (!langToggle)
+    throw new Error("Language toggle button not found!");
+langToggle.addEventListener("click", () => {
+    switchLanguage();
+});
+window.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
     showLoader();
+    yield loadTranslations();
+    updateUILanguage();
+    langToggle.textContent = currentLang.toUpperCase();
     loadTasks();
     setTimeout(() => {
         hideLoader();
     }, 1000);
-});
+}));
 const footerYear = document.querySelector('footer p');
 const currentYear = new Date().getFullYear();
 footerYear.innerHTML = `Coded by <a href="https://dejvcodes.netlify.app/" target="_blank">DejvCodes</a>. © ${currentYear} David Kalmus.`;

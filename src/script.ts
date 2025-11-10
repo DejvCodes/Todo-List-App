@@ -7,13 +7,65 @@ const numOfTasks = document.querySelector(".num-of-tasks span") as HTMLElement;
 const clearCompletedBtn = document.querySelector(".clear-completed") as HTMLButtonElement;
 const loader = document.getElementById("loader") as HTMLElement;
 const filterBtns = document.querySelectorAll(".filter-btn") as NodeListOf<HTMLButtonElement>;
+const langToggle = document.getElementById("langToggle") as HTMLButtonElement;
 
 // Default values
 let allTasks: Task[] = JSON.parse(localStorage.getItem("allTasks") || "[]");
 let currentFilter: string = "all";
+let currentLang: string = localStorage.getItem("language") || "en";
 
 // Task type definition
 type Task = { id: number, text: string, isCompleted: boolean };
+
+// Translations
+type Translations = {
+    [key: string]: {
+        [key: string]: string;
+    };
+};
+
+let translations: Translations = {};
+
+// Load translations from JSON files
+const loadTranslations = async (): Promise<void> => {
+    try {
+        const enResponse = await fetch('/locales/en.json');
+        const czResponse = await fetch('/locales/cz.json');
+        
+        translations.en = await enResponse.json();
+        translations.cz = await czResponse.json();
+    } catch (error) {
+        console.error("Error loading translations:", error);
+    }
+};
+
+// Language switching
+const switchLanguage = (): void => {
+    currentLang = currentLang === "en" ? "cz" : "en";
+    localStorage.setItem("language", currentLang);
+    updateUILanguage();
+    langToggle.textContent = currentLang.toUpperCase();
+};
+
+const updateUILanguage = (): void => {
+    const trans = translations[currentLang];
+    
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (key && trans[key]) {
+            element.textContent = trans[key];
+        }
+    });
+    
+    // Update placeholder
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        if (key && trans[key]) {
+            (element as HTMLInputElement).placeholder = trans[key];
+        }
+    });
+};
 
 // Loader spinner
 const showLoader = (): void => {
@@ -30,7 +82,7 @@ const addTasks = (): void => {
 
     // Validation
     if (!keyword) {
-        alert("Please enter a new todo...");
+        alert(translations[currentLang].alertEmpty);
         return;
     }
 
@@ -142,7 +194,7 @@ const clearCompleted = (): void => {
 
     // Validation
     if (completedTasks.length === 0) {
-        alert("You don't have any completed tasks...");
+        alert(translations[currentLang].alertNoCompleted);
         return;
     }
 
@@ -178,7 +230,7 @@ const editTask = (taskId: number): void => {
     const task = allTasks.find((oneTask) => oneTask.id === taskId); // Find task by ID
     if (!task) return;
 
-    const newText = prompt("Edit your task:", task.text); // Prompt for new text
+    const newText = prompt(translations[currentLang].editPrompt, task.text); // Prompt for new text
     if (newText === null || newText.trim() === "") return;
 
     task.text = newText.trim(); // Update task text
@@ -264,9 +316,18 @@ filterBtns.forEach((btn) => {
     });
 })
 
+// Event listener for language toggle
+if (!langToggle) throw new Error("Language toggle button not found!");
+langToggle.addEventListener("click", () => {
+    switchLanguage();
+})
+
 // Load tasks on page load + show loader
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", async () => {
     showLoader();
+    await loadTranslations();
+    updateUILanguage();
+    langToggle.textContent = currentLang.toUpperCase();
     loadTasks();
     // Simulate loading delay
     setTimeout(() => {
