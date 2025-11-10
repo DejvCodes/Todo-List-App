@@ -74,9 +74,6 @@ body {
   border: none;
   flex-grow: 1;
 }
-.container form.input-form input::-moz-placeholder {
-  color: #81828F;
-}
 .container form.input-form input::placeholder {
   color: #81828F;
 }
@@ -346,8 +343,7 @@ footer p a:hover {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   z-index: 9999;
 }
 
@@ -398,4 +394,22 @@ footer p a:hover {
 
 .lang-toggle:hover {
   color: #E9E9E9;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* ---------- WINDOWS SPECIFIC FIXES ---------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ */
+  li.one-item button.edit-btn {
+    font-size: 22px !important;
+    top: 12px;
+  }
+}
+@supports (-ms-ime-align: auto) {
+  /* Edge */
+  li.one-item button.edit-btn {
+    font-size: 22px !important;
+    top: 12px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
