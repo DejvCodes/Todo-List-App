@@ -15,7 +15,7 @@ Tasks are stored in local storage.
 • Task Counter – Displays the number of remaining tasks. <br>
 • Loader – Displays a smooth animated spinner during data loading for a better user experience. <br>
 
-## 📱 Screenshots 
+## 📱 Screenshots  
 <img src="/images/Todo List App 1.jpg" width="350"> <img src="/images/Todo List App 2.jpg" width="350">
 
 ## 🏃🏻 How to Run this App
