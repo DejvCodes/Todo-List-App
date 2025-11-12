@@ -5,7 +5,7 @@
   "filterActive": "Aktivní",
   "filterCompleted": "Dokončené",
   "emptyMessage": "Seznam úkolů je prázdný!",
-  "itemsLeft": "zbývající úkoly",
+  "itemsLeft": "Aktivní",
   "clearCompleted": "Vymazat dokončené",
   "alertEmpty": "Prosím zadejte nový úkol...",
   "alertNoCompleted": "Nemáte žádné dokončené úkoly...",
