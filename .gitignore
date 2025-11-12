@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Node modules
+node_modules/
+
+# Build files
+*.js.map
+*.css.map
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
