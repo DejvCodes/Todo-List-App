@@ -44,7 +44,7 @@ body {
   max-width: 540px;
   display: flex;
   flex-direction: column;
-  padding: 80px 25px;
+  padding: 90px 25px;
   margin: 0 auto;
   /* ---------- LANGUAGE TOGGLE BUTTON ---------- */
 }
@@ -327,7 +327,7 @@ footer p a:hover {
     background: url("/images/bg-mobile.jpg") no-repeat bottom/cover;
   }
   .container {
-    padding: 60px 17px;
+    padding: 70px 17px;
   }
   .container h1.todo-title {
     letter-spacing: 5px;
