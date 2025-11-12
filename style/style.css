@@ -46,14 +46,41 @@ body {
   flex-direction: column;
   padding: 80px 25px;
   margin: 0 auto;
+  /* ---------- LANGUAGE TOGGLE BUTTON ---------- */
+}
+.container .header-with-lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 .container h1.todo-title {
   color: #E9E9E9;
   font-family: "Josefin Sans", serif;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: bold;
   letter-spacing: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+}
+.container .lang-toggle {
+  width: 50px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #81828F;
+  background: #10101A;
+  font-family: "Josefin Sans", serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.container .lang-toggle:hover {
+  color: #E9E9E9;
 }
 .container form.input-form {
   display: flex;
@@ -210,10 +237,9 @@ body {
 .container li.one-item span.cross {
   display: block;
   position: absolute;
-  top: 7px;
+  top: 14px;
   right: 20px;
-  font-size: 32px !important;
-  font-weight: 500 !important;
+  font-size: 28px !important;
   color: #81828F;
   transition: color 0.2s linear;
   pointer-events: auto;
@@ -224,9 +250,9 @@ body {
 }
 .container li.one-item button.edit-btn {
   position: absolute;
-  top: 14px;
-  right: 50px;
-  font-size: 22px !important;
+  top: 18px;
+  right: 52px;
+  font-size: 20px !important;
   font-weight: 500 !important;
   color: #81828F;
   background: none;
@@ -301,25 +327,27 @@ footer p a:hover {
     background: url("/images/bg-mobile.jpg") no-repeat bottom/cover;
   }
   .container {
-    padding: 60px 20px;
+    padding: 60px 17px;
   }
   .container h1.todo-title {
-    letter-spacing: 7px;
-    margin-bottom: 22px;
+    letter-spacing: 5px;
+    margin-top: 7px;
   }
   .container li.one-item {
     position: relative;
   }
   .container li.one-item::before {
     top: 17px;
+    left: 17px;
   }
   .container li.one-item span.cross {
-    top: 7px;
-    font-size: 38px !important;
+    font-size: 26px !important;
+    right: 17px;
   }
   .container li.one-item button.edit-btn {
-    font-size: 32px !important;
-    top: 8.5px;
+    font-size: 19px !important;
+    right: 45px;
+    top: 17px;
   }
   .container li.one-item p.text {
     margin-right: 85px;
@@ -332,9 +360,81 @@ footer p a:hover {
   }
   .container .todo-info p.num-of-tasks {
     font-size: 17px;
+    margin-left: 15px;
   }
   .container .todo-info button.clear-completed {
     font-size: 17px;
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .container {
+    padding: 55px 15px;
+  }
+  .container .lang-toggle {
+    width: 40px;
+    height: 35px;
+    font-size: 14px;
+  }
+  .container form.input-form input {
+    height: 45px;
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+  .container form.input-form button {
+    height: 45px;
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  .container .filter-bubble {
+    padding: 5px 10px;
+  }
+  .container .filter-bubble .filter-buttons {
+    gap: 5px;
+  }
+  .container .filter-bubble .filter-buttons button.filter-btn {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+  .container li.one-item::before {
+    top: 15px;
+    left: 15px;
+    width: 18px;
+    height: 18px;
+  }
+  .container li.one-item span.cross {
+    font-size: 24px !important;
+    right: 15px;
+    top: 12px;
+  }
+  .container li.one-item button.edit-btn {
+    font-size: 18px !important;
+    right: 42px;
+    top: 14px;
+  }
+  .container li.one-item p.text {
+    font-size: 14px;
+    margin: 5px 70px 0 22px;
+  }
+  .container li.message {
+    font-size: 14px;
+    min-height: 50px;
+  }
+  .container .todo-info {
+    height: 50px;
+    font-size: 14px;
+  }
+  .container .todo-info p.num-of-tasks {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  .container .todo-info button.clear-completed {
+    font-size: 14px;
+    margin-right: 15px;
+  }
+  footer p {
+    font-size: 13px;
+    padding: 10px;
   }
 }
 /* ---------- LOADER CONTAINER ---------- */
@@ -363,54 +463,5 @@ footer p a:hover {
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
-/* ---------- LANGUAGE TOGGLE BUTTON ---------- */
-.header-with-lang {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.header-with-lang h1.todo-title {
-  margin-bottom: 0;
-}
-
-.lang-toggle {
-  width: 50px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #81828F;
-  background: #10101A;
-  font-family: "Josefin Sans", serif;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 6px;
-  transition: all 0.2s linear;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
-.lang-toggle:hover {
-  color: #E9E9E9;
-}
-
-/* ---------- WINDOWS SPECIFIC FIXES ---------- */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* IE10+ */
-  .container li.one-item button.edit-btn {
-    font-size: 22px !important;
-    top: 12px !important;
-  }
-}
-@supports (-ms-ime-align: auto) {
-  /* Edge */
-  .container li.one-item button.edit-btn {
-    font-size: 22px !important;
-    top: 12px !important;
   }
 }/*# sourceMappingURL=style.css.map */
