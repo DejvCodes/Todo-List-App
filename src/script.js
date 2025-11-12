@@ -97,7 +97,7 @@ const createNewTask = (task) => {
         elementP.classList.add("completed");
     elementLi.appendChild(elementP);
     const editBtn = document.createElement("button");
-    editBtn.innerHTML = "&#9998;";
+    editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
     editBtn.classList.add("edit-btn");
     editBtn.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -105,7 +105,7 @@ const createNewTask = (task) => {
     });
     elementLi.appendChild(editBtn);
     const elementSpan = document.createElement("span");
-    elementSpan.innerHTML = "\u00d7";
+    elementSpan.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     elementSpan.classList.add("cross");
     elementSpan.addEventListener("click", (event) => {
         event.stopPropagation();

@@ -131,7 +131,7 @@ const createNewTask = (task: Task): void => {
 
     // Create edit button
     const editBtn = document.createElement("button");
-    editBtn.innerHTML = "&#9998;";
+    editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
     editBtn.classList.add("edit-btn");
     editBtn.addEventListener("click", (event: MouseEvent) => {
         event.stopPropagation();
@@ -141,7 +141,7 @@ const createNewTask = (task: Task): void => {
 
     // Create <span> element (cross) - delete button
     const elementSpan = document.createElement("span");
-    elementSpan.innerHTML = "\u00d7"; // Unicode for "x"
+    elementSpan.innerHTML = '<i class="fa-solid fa-xmark"></i>'; // Unicode for "x"
     elementSpan.classList.add("cross");
 
     // Click event on cross (deleteTask)
