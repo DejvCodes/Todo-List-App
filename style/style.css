@@ -350,9 +350,8 @@ footer p a:hover {
     top: 17px;
   }
   .container li.one-item p.text {
-    margin-right: 85px;
+    margin-right: 60px;
     word-wrap: break-word;
-    overflow-wrap: break-word;
   }
   .container .todo-info {
     font-size: 17px;
@@ -414,7 +413,7 @@ footer p a:hover {
   }
   .container li.one-item p.text {
     font-size: 14px;
-    margin: 5px 70px 0 22px;
+    margin: 5px 55px 0 22px;
   }
   .container li.message {
     font-size: 14px;
