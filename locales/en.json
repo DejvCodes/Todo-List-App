@@ -9,5 +9,5 @@
   "clearCompleted": "Clear Completed",
   "alertEmpty": "Please enter a new todo...",
   "alertNoCompleted": "You don't have any completed tasks...",
-  "editPrompt": "Edit your task:"
+  "editPrompt": "Edit your task:" 
 }
