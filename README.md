@@ -31,4 +31,4 @@ Tasks are stored in local storage.
 <a href="https://todo-list-app-dejvcodes.netlify.app/">Todo List App</a>
 
 ## 🔐 License
-[MIT License](LICENSE) 
+[MIT License](LICENSE)
