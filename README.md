@@ -27,6 +27,28 @@ Tasks are stored in local storage.
 ## 💻 Tech Stack 
 [![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
 
+## 📁 Project Structure
+```
+src/
+├── script.js       # Compiled JavaScript from TypeScript
+└── script.ts       # Main TypeScript logic for task management
+
+style/
+├── partials/       # SCSS partials
+│   ├── _mixins.scss     # Reusable SCSS mixins
+│   └── _variables.scss  # SCSS variables (colors, fonts, etc.)
+├── style.scss      # Main SCSS file
+├── style.css       # Compiled CSS
+└── style.css.map   # Source map for debugging
+
+locales/
+├── en.json         # English translations
+└── cz.json         # Czech translations
+
+images/             # Screenshots and assets
+index.html          # Main HTML file
+```
+
 ## 🌐 Live Demo
 <a href="https://todo-list-app-dejvcodes.netlify.app/">Todo List App</a>
 
