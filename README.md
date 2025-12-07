@@ -20,8 +20,8 @@ Tasks are stored in local storage.
 
 ## 🏃🏻 How to Run this App 
 1. Clone the repository: <br>
-    • git clone https://github.com/DejvCodes/Todo-List-App.git <br>
-    • cd Todo-List-App <br>
+    • `git clone https://github.com/DejvCodes/Todo-List-App.git` <br>
+    • `cd Todo-List-App` <br>
 2. Open index.html in a live server or browser <br>
 
 ## 💻 Tech Stack 
