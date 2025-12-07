@@ -22,10 +22,12 @@ Tasks are stored in local storage.
 1. Clone the repository: <br>
     • `git clone https://github.com/DejvCodes/Todo-List-App.git` <br>
     • `cd Todo-List-App` <br>
-2. Open index.html in a live server or browser <br>
+2. Open HTML files in your browser:
+    • open index.html in a live server or browser
+    • or use Live Server extension in VS Code
 3. Compile and run TypeScript files: <br>
-   • `tsc script.ts` to compile individual files <br>
-   • or use `tsc --watch` for automatic compilation <br>
+    • `tsc script.ts` to compile individual files <br>
+    • or use `tsc --watch` for automatic compilation <br>
 
 ## 💻 Tech Stack 
 [![My Skills](https://skillicons.dev/icons?i=html,css,sass,javascript,typescript)](https://skillicons.dev)
