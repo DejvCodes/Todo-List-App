@@ -338,4 +338,4 @@ window.addEventListener("DOMContentLoaded", async () => {
 // Footer year update
 const footerYear = document.querySelector('footer p') as HTMLElement;
 const currentYear = new Date().getFullYear();
-footerYear.innerHTML = `Coded by <a href="https://dejvcodes.netlify.app/" target="_blank">DejvCodes</a>. © ${currentYear} David Kalmus.`;
+footerYear.innerHTML = `Coded by <a href="https://dejvcodes.com" target="_blank">DejvCodes</a>. © ${currentYear} David Kalmus.`;
