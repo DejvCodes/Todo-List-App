@@ -1,7 +1,7 @@
 ## 📝 Todo List App
 A simple but powerful Todo List App built with HTML, CSS (SCSS), JavaScript and TypeScript. 
 This app allows users to manage tasks efficiently with features such as adding tasks, marking them as completed, deleting tasks, clearing completed tasks and a task counter. 
-Tasks are stored in local storage.
+Tasks are stored in local storage. 
 
 ## 🚀 Features 
 • **Add Tasks** – Easily add new tasks using a simple input field and button. <br>
